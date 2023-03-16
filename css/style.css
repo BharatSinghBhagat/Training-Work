@@ -27,6 +27,13 @@ body{
 .adjust{   
 margin-bottom: 0%;
 margin-left: 4%;
+
+}
+.adjust:hover{
+    animation:shake 0.5s;
+cursor:pointer;
+scale:1.75;
+background-color: transparent;
 }
 #adjust{
 color: #2d3134;
@@ -114,6 +121,9 @@ button {
     height: 88%;
     margin-top: -4%;
 }
+#search-icon:hover{
+    scale: 1.5;
+}
 .where{
     width: 40%;
     line-height: 1%;
@@ -129,7 +139,6 @@ button {
     display: flex;
     flex-direction: column;
     width:100%;
-    /* border:1px solid red; */
     height: 50vh;
     flex-wrap: wrap;
     align-items: center;
@@ -164,6 +173,7 @@ width:71%;
     float: right;
     width: 8%;
     border: none;
+
 }
 #arrow-fig-left{
     width: 84%;
@@ -173,9 +183,19 @@ width:71%;
      width: 94%;
     max-height: 100%;
 }
-.categories-card{
-    width: 15%;
-    text-align: center;
+#arrow-fig-right:hover ,#arrow-fig-left:hover{
+        animation: rotate 1s linear;
+    }
+    @keyframes rotate{
+        0%{
+            transform: rotate(0deg);
+        }
+        50%{
+            transform: rotate(180deg);
+        }
+        100%{
+            transform: rotate(360deg);
+        }
 }
 #double-arrow{
     margin-left: 60%;
@@ -259,7 +279,6 @@ width:71%;
     flex-wrap:wrap;
 }
 .categories-content {
-    /* border: 1px solid; */
     width: 29%;
     height: 100%;
 }
@@ -270,6 +289,7 @@ width:71%;
     flex-direction: column;
     background-color: #faf8ed;
     border: 4px solid white;
+    
 }
 #popular-image {
         width: 94%;
@@ -311,6 +331,7 @@ h4 {
     top: 14%;
     border: none;
 }
+
 .btn-btn{
     position: relative;
 }
@@ -320,7 +341,42 @@ h4 {
     color: black;
     border-color: black;
     margin-left: 4%;
-
+    transition: 0.3s;
+}
+.btn:hover{
+    scale:1.25;
+    background-color: #000000;
+    color: white;  
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+/* .nav-content :hover a{
+    scale:1.25;
+    background-color: #000000;
+    color: white;  
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+} */
+a:hover{
+    animation:shake 0.5s;
+    cursor:pointer;
+    scale:1.5;
+    background-color: #000000;
+    color: white;
+    border-radius:10px;
+}
+@keyframes shake {
+0% { transform: translate(1px, 1px) rotate(0deg); }
+10% { transform: translate(-1px, -2px) rotate(-1deg); }
+20% { transform: translate(-3px, 0px) rotate(1deg); }
+30% { transform: translate(3px, 2px) rotate(0deg); }
+40% { transform: translate(1px, -1px) rotate(1deg); }
+50% { transform: translate(-1px, 2px) rotate(-1deg); }
+60% { transform: translate(-3px, 1px) rotate(0deg); }
+70% { transform: translate(3px, 1px) rotate(-1deg); }
+80% { transform: translate(-1px, -1px) rotate(1deg); }
+90% { transform: translate(1px, 2px) rotate(0deg); }
+100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 .top-destination{
     display: flex;
@@ -392,6 +448,7 @@ padding-bottom: 3%;
     display: flex;
     flex-direction: column;
     width: 27%;
+    
 }
 .flex-one >div{
     width:100%;
@@ -458,12 +515,14 @@ height:750px;
     border-radius: 9px;
     border: none;
     margin-left: 33%;
-    background-image: url(./image/msg.png);
+    background-image: url(../image/msg.png);
     background-repeat: no-repeat;
     background-size: 9% 67%;
     margin-bottom: 24px;
     background-position: 95%;
-
+}
+.signup-box :hover input{
+     scale: 1.5;
 }
 ::placeholder{
     font-size: 1vw;
@@ -545,6 +604,83 @@ flex-direction: column;
 .responsive-menu-icon{
     display: none;
 }
+/* animation */
+.popular-card-item:hover{
+    scale:115%;
+    box-shadow: 2px 2px 20px darkorange;
+}
+ .discover-left{
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+    /* border:1px solid; */
+}
+  @keyframes example {
+     0%   { right:400px; top:0px;}
+
+    100% {right:0px; top:0px;}
+  }
+  
+ .discover-right{
+    position: relative;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-timing-function: ease-out;
+
+}
+  @keyframes example {
+     0%   { left:400px; top:0px;}
+
+    100% {left:0px; top:0px;}
+  }
+  .categories-card {
+    margin: 24px;
+    width: 15%;
+    text-align: center;
+    height: 50px;
+    animation: zoom-in-zoom-out 4s ease infinite;
+  }
+  #boy-image,#storie-right{
+    transition: transform .7s ease-in-out;
+  }
+  #boy-image:hover {
+    transform: rotate(360deg);
+  }
+  #storie-image:hover {
+    transform: rotate(360deg);
+  }
+  .popular-card-item:hover .price-button > .btn-btn > .popular-btn{
+    animation: zoom-in-zoom-out 0.4s infinite;
+    cursor: pointer;
+
+}
+.k12{
+    animation: zoomless-in-zoomless-out 0.4s infinite;
+    cursor: pointer;
+    box-shadow: 1px 1px 15px darkorange;
+}
+@keyframes zoomless-in-zoomless-out {
+    0% { transform: scale(1, 1);}
+    50% {transform: scale(0.99, 0.99);}
+    100% {transform: scale(1, 1);}
+  } 
+  @keyframes zoom-in-zoom-out {
+    0% { transform: scale(1, 1);}
+    50% {transform: scale(0.9, 0.9);}
+    100% {transform: scale(1, 1);}
+  } 
+  
+  .reveal{
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+  }
+  .reveal.active{
+    transform: translateY(0);
+    opacity: 1;
+  }
 @media screen and (min-device-width: 375px)and (max-device-width:667px){
     #double-arrow{
         display: none;
@@ -639,7 +775,8 @@ p {
     height: 10%;
 }
 .categories-card {
-    width: 51%;
+    width: 60%;
+    height: auto;
 }
 .rectangle-cap {
     font-size: 5.2vw;
@@ -694,6 +831,10 @@ h4{
     right: 5%;
     top: 21%;
 }
+
+
+
+
 .btn-row {
     width: 100%;
     height: 35%;

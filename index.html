@@ -11,7 +11,7 @@
 </head>
 <body>
     <div class="container">
-        <div class="nav">
+        <div class="nav reveal">
             <div class="nav-content" id="nav-content-one">
                 <div class="adjust">
                    <img src="./image/Union.png">
@@ -27,7 +27,7 @@
             <button>Book now <img src="./image/Vector (2).png">
             </div>  
         </div>
-        <div class="responsive-menu">
+        <div class="responsive-menu reveal">
             <img src="./image/Union.png">
             <input type="checkbox" id="check">
             <label for="check">
@@ -41,7 +41,7 @@
                 <div><a>Blog</a></div>
              </div>
         </div>
-        <div class="discover">
+        <div class="discover reveal">
             <div class="discover-left">
                 <p id="heading">Discover the Best Lovely Place</p>
                 <p class="para-font" id="fit">Plan and book your perfect trio with expert advice,travel tips,destination information and inspiration from us.</p>
@@ -70,7 +70,7 @@
                 </div>
             </div>
         </div>
-        <div class="categories">
+        <div class="categories reveal">
             <div class="categories-content" id="categories-content">
                 <div class="content">
                     <p class="sub-heading">Categories</p>
@@ -114,7 +114,7 @@
                 </div>
             </div>
         </div>
-        <div class="our-stories">
+        <div class="our-stories reveal">
             <div class="discover-left" id="stories-left">
                 <p class="orange-text">Our Experience</p>
                 <p class="sub-heading">Our Stories Have Adventures</p>
@@ -138,7 +138,7 @@
                 <img src="./image/thom-holmes-sbH46HtZls8-unsplash-removebg (1) 2.png" id="boy-image">
             </div>
         </div>
-        <div class="popular">
+        <div class="popular reveal">
             <div class="find-popular">
                 <div class="categories-content">
                     <p id="unique">Find Popular Destination</p>
@@ -182,7 +182,7 @@
                 </div>
             </div>
         </div>
-        <div class="top-destination">
+        <div class="top-destination reveal">
             <div class="top-destination-header">
                  <p class="sub-heading">Top Destination</p>
                  <p class="para-font">Sost Brilliant resons Entrada should be your one-stop-shop!</p>
@@ -195,17 +195,20 @@
                 </div>
             </div>   
         </div>
-        <div class="parent-flex">
+        <div class="parent-flex reveal">
          <div class="flex">
                 <div class="flex-one">
                     <div>
                         <img src="./image/Rectangle 4389.png" id="img-card">
                     </div>
-                    <div class="absoulte-para">Vientam</div>
+                    <!-- <div class="absoulte-para">Vientam</div> -->
                     <div>
                         <img src="./image/Group.png" id="img-card">
+                        <!-- <div class="middle">
+                            <div class="text-animation">John Doe</div>
+                          </div> -->
                     </div>
-                    <div class="absoulte-para">Vientam</div>
+                    <!-- <div class="absoulte-para">Vientam</div> -->
                 </div>
                 <div class="flex-two">
                     <img src="./image/Rectangle 4391.png" id="img-card-rect">
@@ -221,7 +224,7 @@
                 </div>
             </div>
         </div>    
-        <div class="our-stories">
+        <div class="our-stories reveal">
             <div class="discover-left" id="stories-left">
                 <!-- <p class="orange-text">___</p> -->
                 <p class="sub-heading-one">A Customer Said About Us:</p>
@@ -236,14 +239,14 @@
                 <img src="./image/crop-2.png" id="boy-image">
             </div>
         </div>
-        <div class="signup-box">
+        <div class="signup-box reveal">
             <div class="signup">
                 <p class="sub-heading">Sign up to our newsletter</p>
                 <p id="sign-up-para">Recieve latest newss,update and many other things  <br>every week</p>
                 <input type="text" id="text"placeholder="Enter your email address">
             </div>
         </div>
-        <div class="footer">
+        <div class="footer reveal">
             <div class="footer-one-third">
                 <img src="./image/satlylogo.png" id="pho">
                 <p class="para-font">Enjoy the touring with salty</p>
@@ -284,6 +287,24 @@
             </div>
         </div>
     </div>
-    
+<script>function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+  
+    for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        reveals[i].classList.add("active");
+      } else {
+        reveals[i].classList.remove("active");
+      }
+    }
+  }
+  
+  window.addEventListener("scroll", reveal);
+  </script>    
 </body>
+
 </html>
